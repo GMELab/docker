@@ -13,7 +13,6 @@ jobs:
   build:
     env:
       DATABASE_URL: postgres://postgres:postgres@localhost:5432
-    runs-on: linux-16
     permissions:
       contents: read
       packages: write
