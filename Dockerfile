@@ -26,7 +26,7 @@ RUN cd Python-3.13.2 && make altinstall
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 # Now that we have our languages installed, we can start installing the packages we need for them
-RUN R -e "install.packages(c('data.table', 'dplyr', 'mgcv', 'doParallel', 'foreach'))"
+RUN R -e "install.packages(c('data.table', 'dplyr', 'mgcv', 'doParallel', 'foreach', 'MBESS', 'corpcor'))"
 RUN pip3.13 install numpy pandas matplotlib
 RUN curl https://raw.githubusercontent.com/GMELab/lmutils.r/refs/heads/master/install.sh | sh
 
