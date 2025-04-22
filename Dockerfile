@@ -4,9 +4,10 @@ FROM debian:bookworm-slim
 
 # Here we want to make sure we have all the basic necessities for building and running our analyses
 RUN apt-get update && apt-get install -y \
-       build-essential curl git unzip make libssl-dev zlib1g-dev \
-       libbz2-dev libreadline-dev libsqlite3-dev wget llvm \
-       libncurses5-dev libncursesw5-dev xz-utils tk-dev
+       build-essential curl git unzip make cmake libssl-dev \
+       zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev \
+       wget llvm libncurses5-dev libncursesw5-dev xz-utils \
+       tk-dev
 
 # Now that we have our basic necessities, we want to start installing all the various tools we'll use
 # Some we can install using apt (the package manager), others we will build from their source code
