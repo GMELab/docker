@@ -40,9 +40,9 @@ If we only want to run a single analysis, simply want to experiment, or just don
 To do so, we first want to download and save the Docker image as an asset on DNAnexus. We can do this using the following command:
 
 ```bash
-docker pull ghcr.io/gmelab/docker
+docker pull ghcr.io/gmelab/docker:latest
 # This might take a few minutes, and won't display a progress bar
-docker save ghcr.io/gmelab/docker | gzip | dx upload - --path docker-images/gmel-docker.tar.gz
+docker save ghcr.io/gmelab/docker:latest | gzip | dx upload - --path docker-images/gmel-docker.tar.gz
 ```
 
 Now, we can run commands inside our container!
