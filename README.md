@@ -41,7 +41,7 @@ The simplest way is to simply specify the container ID in the `dx run` command. 
 
 ```bash
 dx run swiss-army-knife \
-  -iimage_file=ghcr.io/gmelab/docker:latest \
+  -iimage=ghcr.io/gmelab/docker:latest \
   -icmd='Rscript -e "print(\"Hello, World!\")"'
 ```
 
