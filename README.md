@@ -35,7 +35,6 @@ To install Docker on your local machine, follow the instructions on the [Docker 
 ## DNAnexus Usage
 
 ### As an environment
-### As an environment
 If we only want to run a single analysis, simply want to experiment, or just don't want to deal with Docker, we can use the Docker image as an environment on DNAnexus then run commands directly on it.
 
 The simplest way is to simply specify the container ID in the `dx run` command. For example, if we want to run a simple R script, we can do so using the following command:
