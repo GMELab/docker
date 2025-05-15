@@ -35,9 +35,20 @@ To install Docker on your local machine, follow the instructions on the [Docker 
 ## DNAnexus Usage
 
 ### As an environment
+### As an environment
 If we only want to run a single analysis, simply want to experiment, or just don't want to deal with Docker, we can use the Docker image as an environment on DNAnexus then run commands directly on it.
 
-To do so, we first want to download and save the Docker image as an asset on DNAnexus. We can do this using the following command:
+The simplest way is to simply specify the container ID in the `dx run` command. For example, if we want to run a simple R script, we can do so using the following command:
+
+```bash
+dx run swiss-army-knife \
+  -iimage_file=ghcr.io/gmelab/docker:latest \
+  -icmd='Rscript -e "print(\"Hello, World!\")"'
+```
+
+However, if your DNANexus project has no access to the internet, or you run into the GitHub Container Registry rate limits, you may want to download the Docker image and upload it to DNAnexus. This will allow you to run the analysis without needing to access the internet.
+
+To do so, we first want to download and save the Docker image as an asset on DNAnexus.
 
 ```bash
 docker pull ghcr.io/gmelab/docker:latest
