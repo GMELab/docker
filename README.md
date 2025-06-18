@@ -19,6 +19,8 @@ To request additional software, please send a message to Josef ([grafj1@mcmaster
   - psych
   - labelled
   - tidyverse
+  - r.utils
+  - ggplot2
 - Python 3.13.2
   - numpy
   - pandas
