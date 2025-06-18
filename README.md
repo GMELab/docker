@@ -14,6 +14,11 @@ To request additional software, please send a message to Josef ([grafj1@mcmaster
   - foreach
   - MBESS
   - corpcor
+  - purrr
+  - table1
+  - psych
+  - labelled
+  - tidyverse
 - Python 3.13.2
   - numpy
   - pandas
