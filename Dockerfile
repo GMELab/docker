@@ -29,7 +29,7 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 # Now that we have our languages installed, we can start installing the packages we need for them
 RUN R -e "install.packages('remotes')"
 RUN R -e "remotes::install_version('OpenMx', version = '2.21.11')"
-RUN R -e "install.packages(c('data.table', 'dplyr', 'mgcv', 'doParallel', 'foreach', 'MBESS', 'corpcor', 'purrr', 'table1', 'psych', 'labelled', 'tidyverse', 'r.utils', 'ggplot2'))"
+RUN R -e "install.packages(c('data.table', 'dplyr', 'mgcv', 'doParallel', 'foreach', 'MBESS', 'corpcor', 'purrr', 'table1', 'psych', 'labelled', 'tidyverse', 'r.utils', 'ggplot2', 'compiler'))"
 RUN pip3.13 install numpy pandas matplotlib
 RUN curl https://raw.githubusercontent.com/GMELab/lmutils.r/refs/heads/master/install.sh | sh
 
