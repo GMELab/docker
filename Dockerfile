@@ -1,6 +1,6 @@
 # Here we choose our base image
-# In this case, we're using Debian 12 (Bookworm) and the slim version, which removes some non-essential components
-FROM debian:bookworm-slim
+# In this case, we're using the latest Debian stable version
+FROM debian:latest
 
 # Here we want to make sure we have all the basic necessities for building and running our analyses
 RUN apt-get update && apt-get install -y \
