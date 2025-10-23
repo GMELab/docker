@@ -7,7 +7,8 @@ RUN apt-get update && apt-get install -y \
        build-essential curl git unzip make cmake libssl-dev \
        zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev \
        wget llvm libncurses5-dev libncursesw5-dev xz-utils \
-       tk-dev
+       tk-dev apt-transport-https ca-certificates gnupg
+
 
 # Now that we have our basic necessities, we want to start installing all the various tools we'll use
 # Some we can install using apt (the package manager), others we will build from their source code
@@ -41,3 +42,6 @@ RUN unzip plink_linux_x86_64_20241022.zip
 RUN mv plink /usr/local/bin
 RUN rm plink_linux_x86_64_20241022.zip
 RUN rm -rf plink_linux_x86_64_20241022
+
+# Install gsutil
+RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg && apt-get update -y && apt-get install google-cloud-cli -y
