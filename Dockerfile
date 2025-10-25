@@ -17,11 +17,11 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get install -y r-base r-base-dev
 
 # Next, let's install Python
-# RUN wget https://www.python.org/ftp/python/3.13.2/Python-3.13.2.tgz
-# RUN tar -xvf Python-3.13.2.tgz
-# RUN cd Python-3.13.2 && ./configure --enable-optimizations --with-ensurepip=install
-# RUN cd Python-3.13.2 && make -j $(nproc)
-# RUN cd Python-3.13.2 && make altinstall
+RUN wget https://www.python.org/ftp/python/3.13.2/Python-3.13.2.tgz
+RUN tar -xvf Python-3.13.2.tgz
+RUN cd Python-3.13.2 && ./configure --enable-optimizations --with-ensurepip=install
+RUN cd Python-3.13.2 && make -j $(nproc)
+RUN cd Python-3.13.2 && make altinstall
 # Python can now be run using `python3.13` and `pip3.13`
 
 # Finally, let's install Rust
@@ -31,7 +31,7 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 RUN R -e "install.packages('remotes')"
 RUN R -e "remotes::install_version('OpenMx', version = '2.21.11')"
 RUN R -e "install.packages(c('data.table', 'dplyr', 'mgcv', 'doParallel', 'foreach', 'MBESS', 'corpcor', 'purrr', 'table1', 'psych', 'labelled', 'tidyverse', 'r.utils', 'ggplot2', 'compiler'))"
-# RUN pip3.13 install numpy pandas matplotlib
+RUN pip3.13 install numpy pandas matplotlib
 RUN curl https://raw.githubusercontent.com/GMELab/lmutils.r/refs/heads/master/install.sh | sh
 
 # Now that we have our languages and packages installed, we can start installing the other tools we need
